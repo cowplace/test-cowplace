@@ -1,5 +1,5 @@
 class ThousandsController < ApplicationController
-  before_action :set_thousand, only: [:show, :edit, :update, :destroy]
+  before_action :set_thousand, only: [:show, :edit, :update, :destroy, :down]
 
   # GET /thousands
   # GET /thousands.json
@@ -10,6 +10,14 @@ class ThousandsController < ApplicationController
   # GET /thousands/1
   # GET /thousands/1.json
   def show
+  end
+
+  def down
+    @thousand.down
+    respond_to do |format|
+      format.html { redirect_to @thousand, notice: 'Thousand was successfully down.' }
+      format.json { render :show, status: :down, location: @thousand }
+    end
   end
 
   # GET /thousands/new

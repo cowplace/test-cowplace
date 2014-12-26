@@ -1,9 +1,9 @@
 %p#notice= notice
 
 %p
-  %b Num:
+  %b Count:
   = @thousand.num
 
-= link_to 'Edit', edit_thousand_path(@thousand)
+= link_to 'Down', down_thousand_path(@thousand)
 \|
-= link_to 'Back', thousands_path
+= link_to 'Check Other', thousands_path
