@@ -1,0 +1,21 @@
+%h1 Listing thousands
+
+%table
+  %thead
+    %tr
+      %th Num
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @thousands.each do |thousand|
+      %tr
+        %td= thousand.num
+        %td= link_to 'Show', thousand
+        %td= link_to 'Edit', edit_thousand_path(thousand)
+        %td= link_to 'Destroy', thousand, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Thousand', new_thousand_path
